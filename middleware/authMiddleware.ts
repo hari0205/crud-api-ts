@@ -7,7 +7,7 @@ import prisma from '../connections/connection'
 
 
 
-
+// Middleware to check authentication
 export const isAuthenticated: RequestHandler = async (req, res, next) => {
     const token = req.cookies['x-auth-token']
     if (!token) {

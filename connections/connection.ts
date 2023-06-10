@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt"
 
 
+// Connection for prisma client
 const prisma = new PrismaClient({ log: ["info", "warn", "error"] });
 prisma.$use(async (params, next) => {
     if (params.model == "User" && params.action == "create") {

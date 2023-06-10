@@ -20,7 +20,7 @@ export const registerHandler: RequestHandler = async (req, res) => {
             data: {
                 email: email,
                 name: name,
-                password: password,
+                password: password, // Password hashing handled by prisma middleware --" Models heavy controllers light" approach
             }
         });
         if (newUser != null) {

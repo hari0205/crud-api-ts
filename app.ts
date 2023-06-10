@@ -1,8 +1,8 @@
-import express from 'express'
-import authRouter from "./routes/authRoutes"
-import blogRoutes from "./routes/blogRoutes"
-import commentRoutes from "./routes/commentRoute"
-import 'express-async-errors'
+import express from 'express';
+import authRouter from "./routes/authRoutes";
+import blogRoutes from "./routes/blogRoutes";
+import commentRoutes from "./routes/commentRoute";
+import 'express-async-errors'; // This will take care of handling all async errors without try/catch
 import cookieParser from 'cookie-parser';
 
 
@@ -15,11 +15,12 @@ const PORT = 3000;
 
 
 
-
-app.use(express.json())
+// Parsing JSON
+app.use(express.json());
+// Parse cookies
 app.use(cookieParser());
 
-
+// Routes
 app.use("/api/users", authRouter)
 app.use("/api/blogs", blogRoutes)
 app.use("/api/comments", commentRoutes)
@@ -32,7 +33,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
     console.error(err)
 })
 
-
+//Server
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`);
 });
