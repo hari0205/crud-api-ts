@@ -11,7 +11,7 @@ import prisma from '../connections/connection'
 export const isAuthenticated: RequestHandler = async (req, res, next) => {
     const token = req.cookies['x-auth-token']
     if (!token) {
-        res.status(403).json({ status: 403, message: "Token missing" })
+        return res.status(403).json({ status: 403, message: "Token missing" })
     }
 
     const decoded = jwt.verify(token, process.env.SECRET_KEY!, { algorithms: ["HS256"] }) as jwt.JwtPayload
