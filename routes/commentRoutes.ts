@@ -9,7 +9,7 @@ import { isAuthenticated } from "../middleware/authMiddleware"
 const router = Router()
 
 router.use(isAuthenticated)
-router.route("/:id/comments").post(createCommentHandler).patch(updateCommentHandler).delete(deleteCommentHandler)
+router.route("/:postId/comments").post(createCommentHandler).patch(updateCommentHandler).delete(deleteCommentHandler)
 
 
 
