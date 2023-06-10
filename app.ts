@@ -1,7 +1,7 @@
 import express from 'express';
 import authRouter from "./routes/authRoutes";
 import blogRoutes from "./routes/blogRoutes";
-import commentRoutes from "./routes/commentRoute";
+import commentRoutes from "./routes/commentRoutes";
 import 'express-async-errors'; // This will take care of handling all async errors without try/catch
 import cookieParser from 'cookie-parser';
 
@@ -10,7 +10,7 @@ import cookieParser from 'cookie-parser';
 
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 
@@ -21,6 +21,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
+app.get('/ping', (req, res) => {
+    res.status(200).send("PONG!");
+})
 app.use("/api/users", authRouter)
 app.use("/api/blogs", blogRoutes)
 app.use("/api/comments", commentRoutes)
