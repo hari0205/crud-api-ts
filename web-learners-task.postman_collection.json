@@ -1,0 +1,965 @@
+{
+	"info": {
+		"_postman_id": "5b190900-daf9-4101-a5fe-fab24afa3b60",
+		"name": "web-learners-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"asfdaa\",\r\n\t\"email\": \"asdf222g@gmail.com\",\r\n\t\"password\": \"asdf123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\" : \"asfdaa\",\r\n\t\"email\": \"asdf222g@gmail.com\",\r\n\t\"password\": \"asdf123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/users/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-O/zF1M4EsSeqcgZOzAXUbc5OpUA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:36:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\": \"asdf22g@gmail.com\",\r\n\t\"password\": \"asdf123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"email\": \"asdf22g@gmail.com\",\r\n\t\"password\": \"asdf123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "x-auth-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGYyMmdAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY4NjQyMjIzNSwiZXhwIjoxNjg2NDI1ODM1fQ.54IT95Zezy7utVxUaQpqpQZKyMXmoGHygWXvY1Sdh9I; Path=/"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-LNKX68cOQwbgMiiO3KqaIJLR06k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:37:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login successful.\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGYyMmdAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY4NjQyMjIzNSwiZXhwIjoxNjg2NDI1ODM1fQ.54IT95Zezy7utVxUaQpqpQZKyMXmoGHygWXvY1Sdh9I\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "Get all blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/blogs/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogs",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All blogs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/blogs/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blogs",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "186"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ba-mJnyulzHFsrfkll7R3e/k/2gWOY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:37:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"createdAt\": \"2023-06-10T14:39:46.498Z\",\n            \"updatedAt\": \"2023-06-10T14:39:46.498Z\",\n            \"title\": \"A blog 23\",\n            \"content\": \"A sample blog with a titless!\",\n            \"authorId\": 1,\n            \"Comments\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get A blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/blogs/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogs",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get A blog",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/blogs/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blogs",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b8-55EjpXliKUvbcRDw+0ELNANTl9A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:39:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"createdAt\": \"2023-06-10T14:39:46.498Z\",\n        \"updatedAt\": \"2023-06-10T14:39:46.498Z\",\n        \"title\": \"A blog 23\",\n        \"content\": \"A sample blog with a titless!\",\n        \"authorId\": 1,\n        \"Comments\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update a blog",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Modified title\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/blogs/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogs",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update a blog",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"title\": \"Modified title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/blogs/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blogs",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d6-zAdTftlgA6Hm5DlO4NhrEsm2kvY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:40:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Updated blog successfully.\",\n    \"data\": {\n        \"id\": 2,\n        \"createdAt\": \"2023-06-10T14:39:46.498Z\",\n        \"updatedAt\": \"2023-06-10T18:40:28.285Z\",\n        \"title\": \"Modified title\",\n        \"content\": \"A sample blog with a titless!\",\n        \"authorId\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a blog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/blogs/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogs",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete blog",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/blogs/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blogs",
+										"2"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-yMfr7VvQk+X7hDJmE3XUZeZMaHQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:42:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create a blog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"A blog 23\",\r\n\t\"content\": \"A sample blog with a titless!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/blogs/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogs",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a blog",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"title\": \"A blog 23\",\r\n\t\"content\": \"A sample blog with a titless!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/blogs/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blogs",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-tHqjHD+38KfalacRWh0XQpKvMHI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:49:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Blog post created successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Post Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"comment\": \"Nice!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/comments/3/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"comments",
+								"3",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"comment\": \"Nice!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/comments/3/comments",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"comments",
+										"3",
+										"comments"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-hmZJazRki8vsyQIJ9fZKdE63H50\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:51:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Comment posted successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\":2,\r\n\t\"comment\": \"Nice A Job!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/comments/3/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"comments",
+								"3",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Comment",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\":2,\r\n\t\"comment\": \"Nice A Job!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/comments/3/comments",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"comments",
+										"3",
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-qTso47/QHlsIwWgWRNHOcetUKg4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:52:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Comment updated successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/comments/3/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"comments",
+								"3",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/comments/3/comments",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"comments",
+										"3",
+										"comments"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-6Pl6UfCJeB7ciopIXvy5GtIIqsg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jun 2023 18:54:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ping",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/ping",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5-sNOzxq3RrrTFdgA0RKrWCSHPHMk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 18:33:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "PONG!"
+				}
+			]
+		}
+	]
+}

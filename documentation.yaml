@@ -1,0 +1,691 @@
+openapi: 3.0.3
+info:
+  title: web-learners-task
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: localhost
+paths:
+  /api/users/register:
+    post:
+      tags:
+        - Auth
+      summary: Register
+      description: Register
+      operationId: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: asdf222g@gmail.com
+                name:
+                  type: string
+                  example: asfdaa
+                password:
+                  type: string
+                  example: asdf123
+            example:
+              email: asdf222g@gmail.com
+              name: asfdaa
+              password: asdf123
+      responses:
+        "201":
+          description: New Request
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "39"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:36:14 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"27-O/zF1M4EsSeqcgZOzAXUbc5OpUA"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User created successfully
+              examples:
+                New Request:
+                  value:
+                    message: User created successfully
+  /api/users/login:
+    post:
+      tags:
+        - Auth
+      summary: Login
+      description: Login
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: asdf22g@gmail.com
+                password:
+                  type: string
+                  example: asdf123
+            example:
+              email: asdf22g@gmail.com
+              password: asdf123
+      responses:
+        "200":
+          description: Login
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "217"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:37:15 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"d9-LNKX68cOQwbgMiiO3KqaIJLR06k"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  x-auth-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGYyMmdAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY4NjQyMjIzNSwiZXhwIjoxNjg2NDI1ODM1fQ.54IT95Zezy7utVxUaQpqpQZKyMXmoGHygWXvY1Sdh9I;
+                  Path=/
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Login successful.
+                  token:
+                    type: string
+                    example: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGYyMmdAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY4NjQyMjIzNSwiZXhwIjoxNjg2NDI1ODM1fQ.54IT95Zezy7utVxUaQpqpQZKyMXmoGHygWXvY1Sdh9I
+              examples:
+                Login:
+                  value:
+                    message: Login successful.
+                    token: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGYyMmdAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY4NjQyMjIzNSwiZXhwIjoxNjg2NDI1ODM1fQ.54IT95Zezy7utVxUaQpqpQZKyMXmoGHygWXvY1Sdh9I
+  /api/blogs/:
+    get:
+      tags:
+        - Blogs
+      summary: Get all blogs
+      description: Get all blogs
+      operationId: getAllBlogs
+      responses:
+        "200":
+          description: All blogs
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "186"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:37:50 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"ba-mJnyulzHFsrfkll7R3e/k/2gWOY"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Comments:
+                          type: array
+                          items: {}
+                          example: []
+                        authorId:
+                          type: number
+                          example: 1
+                        content:
+                          type: string
+                          example: A sample blog with a titless!
+                        createdAt:
+                          type: string
+                          example: "2023-06-10T14:39:46.498Z"
+                        id:
+                          type: number
+                          example: 2
+                        title:
+                          type: string
+                          example: A blog 23
+                        updatedAt:
+                          type: string
+                          example: "2023-06-10T14:39:46.498Z"
+                    example:
+                      - Comments: []
+                        authorId: 1
+                        content: A sample blog with a titless!
+                        createdAt: "2023-06-10T14:39:46.498Z"
+                        id: 2
+                        title: A blog 23
+                        updatedAt: "2023-06-10T14:39:46.498Z"
+              examples:
+                All blogs:
+                  value:
+                    data:
+                      - Comments: []
+                        authorId: 1
+                        content: A sample blog with a titless!
+                        createdAt: "2023-06-10T14:39:46.498Z"
+                        id: 2
+                        title: A blog 23
+                        updatedAt: "2023-06-10T14:39:46.498Z"
+    post:
+      tags:
+        - Blogs
+      summary: Create a blog
+      description: Create a blog
+      operationId: createABlog
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: A sample blog with a titless!
+                title:
+                  type: string
+                  example: A blog 23
+            example:
+              content: A sample blog with a titless!
+              title: A blog 23
+      responses:
+        "201":
+          description: Create a blog
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "44"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:49:23 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"2c-tHqjHD+38KfalacRWh0XQpKvMHI"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Blog post created successfully
+              examples:
+                Create a blog:
+                  value:
+                    message: Blog post created successfully
+  /api/blogs/3:
+    get:
+      tags:
+        - Blogs
+      summary: Get A blog
+      description: Get A blog
+      operationId: getABlog
+      responses:
+        "200":
+          description: Get A blog
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "184"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:39:25 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"b8-55EjpXliKUvbcRDw+0ELNANTl9A"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      Comments:
+                        type: array
+                        items: {}
+                        example: []
+                      authorId:
+                        type: number
+                        example: 1
+                      content:
+                        type: string
+                        example: A sample blog with a titless!
+                      createdAt:
+                        type: string
+                        example: "2023-06-10T14:39:46.498Z"
+                      id:
+                        type: number
+                        example: 2
+                      title:
+                        type: string
+                        example: A blog 23
+                      updatedAt:
+                        type: string
+                        example: "2023-06-10T14:39:46.498Z"
+              examples:
+                Get A blog:
+                  value:
+                    data:
+                      Comments: []
+                      authorId: 1
+                      content: A sample blog with a titless!
+                      createdAt: "2023-06-10T14:39:46.498Z"
+                      id: 2
+                      title: A blog 23
+                      updatedAt: "2023-06-10T14:39:46.498Z"
+  /api/blogs/2:
+    delete:
+      tags:
+        - Blogs
+      summary: Delete a blog
+      description: Delete a blog
+      operationId: deleteABlog
+      responses:
+        "204":
+          description: Delete blog
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:42:24 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"2a-yMfr7VvQk+X7hDJmE3XUZeZMaHQ"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content: {}
+    patch:
+      tags:
+        - Blogs
+      summary: Update a blog
+      description: Update a blog
+      operationId: updateABlog
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Modified title
+            example:
+              title: Modified title
+      responses:
+        "200":
+          description: Update a blog
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "214"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:40:28 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"d6-zAdTftlgA6Hm5DlO4NhrEsm2kvY"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      authorId:
+                        type: number
+                        example: 1
+                      content:
+                        type: string
+                        example: A sample blog with a titless!
+                      createdAt:
+                        type: string
+                        example: "2023-06-10T14:39:46.498Z"
+                      id:
+                        type: number
+                        example: 2
+                      title:
+                        type: string
+                        example: Modified title
+                      updatedAt:
+                        type: string
+                        example: "2023-06-10T18:40:28.285Z"
+                  message:
+                    type: string
+                    example: Updated blog successfully.
+              examples:
+                Update a blog:
+                  value:
+                    data:
+                      authorId: 1
+                      content: A sample blog with a titless!
+                      createdAt: "2023-06-10T14:39:46.498Z"
+                      id: 2
+                      title: Modified title
+                      updatedAt: "2023-06-10T18:40:28.285Z"
+                    message: Updated blog successfully.
+  /api/comments/3/comments:
+    post:
+      tags:
+        - Comments
+      summary: Post Comment
+      description: Post Comment
+      operationId: postComment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+                  example: Nice!
+            example:
+              comment: Nice!
+      responses:
+        "201":
+          description: Post Comment
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "42"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:51:02 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"2a-hmZJazRki8vsyQIJ9fZKdE63H50"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Comment posted successfully!
+              examples:
+                Post Comment:
+                  value:
+                    message: Comment posted successfully!
+    delete:
+      tags:
+        - Comments
+      summary: Delete comment
+      description: Delete comment
+      operationId: deleteComment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: number
+                  example: 2
+            example:
+              id: 2
+      responses:
+        "204":
+          description: New Request
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:54:33 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"2b-6Pl6UfCJeB7ciopIXvy5GtIIqsg"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content: {}
+    patch:
+      tags:
+        - Comments
+      summary: Update Comment
+      description: Update Comment
+      operationId: updateComment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+                  example: Nice A Job!
+                id:
+                  type: number
+                  example: 2
+            example:
+              comment: Nice A Job!
+              id: 2
+      responses:
+        "200":
+          description: Update Comment
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "43"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:52:45 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"2b-qTso47/QHlsIwWgWRNHOcetUKg4"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Comment updated successfully!
+              examples:
+                Update Comment:
+                  value:
+                    message: Comment updated successfully!
+  /ping:
+    get:
+      summary: HealthCheck
+      description: HealthCheck
+      operationId: healthcheck
+      responses:
+        "200":
+          description: New Request
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "5"
+            Date:
+              schema:
+                type: string
+                example: Sat, 10 Jun 2023 18:33:46 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"5-sNOzxq3RrrTFdgA0RKrWCSHPHMk"
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            text/plain:
+              examples:
+                New Request:
+                  value: PONG!
+tags:
+  - name: Auth
+  - name: Blogs
+  - name: Comments

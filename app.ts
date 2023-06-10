@@ -4,10 +4,13 @@ import blogRoutes from "./routes/blogRoutes";
 import commentRoutes from "./routes/commentRoutes";
 import 'express-async-errors'; // This will take care of handling all async errors without try/catch
 import cookieParser from 'cookie-parser';
+import * as swaggerUi from 'swagger-ui-express';
+import fs from 'fs';
+import YAML from "yaml"
 
 
-
-
+const file = fs.readFileSync("./documentation.yaml", "utf8");
+const swaggerDoc = YAML.parse(file)
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +22,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 // Parse cookies
 app.use(cookieParser());
+
+// Documentation for API
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc))
 
 // Routes
 app.get('/ping', (req, res) => {
