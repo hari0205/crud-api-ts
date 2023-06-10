@@ -16,6 +16,7 @@ services:
 
   application:
     container_name: web-learners
+    image: testdevhari/web-learners-task-application
     build:
       context: .
       dockerfile: Dockerfile

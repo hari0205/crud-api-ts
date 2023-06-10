@@ -1,0 +1,362 @@
+_type: export
+__export_format: 4
+__export_date: 2023-06-10T18:02:48.549Z
+__export_source: insomnia.desktop.app:v2023.2.2
+resources:
+  - _id: req_416681610c8c44f1bd8c869627964338
+    parentId: wrk_d0d1a4c59cdf406a91af041d88db66b5
+    modified: 1686420121278
+    created: 1686406176393
+    url: localhost:3000/ping
+    name: Test
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1686406176393
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_d0d1a4c59cdf406a91af041d88db66b5
+    parentId: null
+    modified: 1685624551812
+    created: 1685624551812
+    name: Tsc
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_1a24e80eb325413a8fbc0b5280ba0ff3
+    parentId: fld_c05fc9beb0e84470a3604276b127ca20
+    modified: 1686407563169
+    created: 1686244670610
+    url: localhost:3000/api/users/login
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"email": "asdf22g@gmail.com",
+        	"password": "asdf123"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686244670610
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_c05fc9beb0e84470a3604276b127ca20
+    parentId: wrk_d0d1a4c59cdf406a91af041d88db66b5
+    modified: 1686396473969
+    created: 1686396473969
+    name: Auth
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1686396473969
+    _type: request_group
+  - _id: req_f162f6c75657455eaef444d58a6203a5
+    parentId: fld_c05fc9beb0e84470a3604276b127ca20
+    modified: 1686396476949
+    created: 1685624553390
+    url: localhost:3000/api/users/register
+    name: Register
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name" : "asfdaa",
+        	"email": "asdf22g@gmail.com",
+        	"password": "asdf123"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686244670560
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ff6631feb98240e8b3170a017dba919a
+    parentId: fld_41d83044dddb4f5e913bca4231602812
+    modified: 1686407985201
+    created: 1686292188514
+    url: localhost:3000/api/blogs/
+    name: CreateBlog
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "A blog 23",
+        	"content": "A sample blog with a titless!"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686292188514
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_41d83044dddb4f5e913bca4231602812
+    parentId: wrk_d0d1a4c59cdf406a91af041d88db66b5
+    modified: 1686396440397
+    created: 1686396440397
+    name: Blogs
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1686396440397
+    _type: request_group
+  - _id: req_901618001cb2434c9334812a62078c90
+    parentId: fld_41d83044dddb4f5e913bca4231602812
+    modified: 1686408059670
+    created: 1686317408207
+    url: localhost:3000/api/blogs/1
+    name: Update Posts
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "Modified title"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686292188501.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_04f462e7e8ad49feb863484925adef1b
+    parentId: fld_41d83044dddb4f5e913bca4231602812
+    modified: 1686408067919
+    created: 1686318896055
+    url: localhost:3000/api/blogs/1
+    name: Delete Posts
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1686292188489
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_63464d517c584fe9906677fe074c0e9e
+    parentId: fld_41d83044dddb4f5e913bca4231602812
+    modified: 1686406201853
+    created: 1686307581044
+    url: localhost:3000/api/blogs/
+    name: GetALlBlogs
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1686292188476.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_20618062c7c84f72a79d9ebb80bd3d78
+    parentId: fld_41d83044dddb4f5e913bca4231602812
+    modified: 1686408078589
+    created: 1686315951595
+    url: localhost:3000/api/blogs/2
+    name: Get blog
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1686292188464
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2fdb665a72484d25a7894956982c4a6c
+    parentId: fld_050e044fbe764b38b1734676f160bc93
+    modified: 1686408033469
+    created: 1686396053396
+    url: localhost:3000/api/comments/1/comments
+    name: Delete comment
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id":1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686396053396
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_050e044fbe764b38b1734676f160bc93
+    parentId: wrk_d0d1a4c59cdf406a91af041d88db66b5
+    modified: 1686321794989
+    created: 1686321794989
+    name: Comments
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1686321794989
+    _type: request_group
+  - _id: req_27c9902908a949b7aecbfb7b39fe3ebc
+    parentId: fld_050e044fbe764b38b1734676f160bc93
+    modified: 1686407670995
+    created: 1686321799426
+    url: localhost:3000/api/comments/1/comments
+    name: CreateComment
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"comment": "Nice!"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686321799426
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8625d59c304a4b37bc5fc4d9f0766cc1
+    parentId: fld_050e044fbe764b38b1734676f160bc93
+    modified: 1686408006124
+    created: 1686395306845
+    url: localhost:3000/api/comments/1/comments
+    name: Edit comment
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id":1,
+        	"comment": "Nice A Job!"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686321799376
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_399ddce7d43d66ed2329ceca6f84abb471dac7db
+    parentId: wrk_d0d1a4c59cdf406a91af041d88db66b5
+    modified: 1685624551815
+    created: 1685624551815
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1685624551815
+    _type: environment
+  - _id: jar_399ddce7d43d66ed2329ceca6f84abb471dac7db
+    parentId: wrk_d0d1a4c59cdf406a91af041d88db66b5
+    modified: 1686416843033
+    created: 1685624551816
+    name: Default Jar
+    cookies:
+      - key: x-auth-token
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGYyMmdAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY4NjQxNjg0MywiZXhwIjoxNjg2NDIwNDQzfQ.tjhkxQWXUo52da0xgB5ChlmaCzj1thhGJyjekySYGG0
+        domain: localhost
+        path: /
+        hostOnly: true
+        creation: 2023-06-10T14:33:46.606Z
+        lastAccessed: 2023-06-10T17:07:23.033Z
+        id: "15026497442820874"
+    _type: cookie_jar
+  - _id: spc_f65507321655473f82c82e3336931c3b
+    parentId: wrk_d0d1a4c59cdf406a91af041d88db66b5
+    modified: 1685624551813
+    created: 1685624551813
+    fileName: Tsc
+    contents: ""
+    contentType: yaml
+    _type: api_spec
