@@ -2,8 +2,16 @@ node_modules
 # Keep environment variables out of version control
 .env
 
+# Build
+build
+
 # Migrations 
 prisma/migrations
 
+#Volumes
+pgdata
+
 #Logs
 yarn-error.log
+
+# Deploy
