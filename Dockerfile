@@ -14,6 +14,8 @@ EXPOSE 3000
 
 RUN yarn add @prisma/client
 
+RUN npx prisma generate
+
 RUN yarn migrate:init
 
 CMD [ "yarn", "migrate:run" ]
