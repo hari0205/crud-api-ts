@@ -11,7 +11,7 @@ This project uses PostgreSQL database. Connect to an instance running on your lo
      docker run -d --name postgres-container -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres -p 5432:5432 postgres:latest
      ```
      
-   - This command will start a PostgreSQL container with the specified username, password, and database name. Port 5432 is exposed and mapped to the host machine.
+   - This command will start a PostgreSQL container with the specified username, password, and database name. Port 5432 is exposed and mapped to the host machine. 
 
 ## Installation
 
@@ -27,7 +27,7 @@ SECRET_KEY = "SECRET KEY FOR JWT"
 6. To run the project: `node build/app.js`
 
 7. To run dev build: `yarn start:dev`
-8. To run initial migrations:  `yarn migrate:init`
+8. To run initial migrations:  `yarn migrate:init` (Might be required if you run the application for the first time)
 9. To run subsequent migrations : `yarn migrate:run`
 
 
