@@ -17,5 +17,5 @@ RUN yarn add @prisma/client
 RUN npx prisma generate
 
 
-CMD [ "startup.sh" ]
+CMD [ "yarn","migrate:init && yarn migrate run" ]
 
