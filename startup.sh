@@ -1,5 +1,5 @@
 #! /bin/bash
 
-yarn migrate:init
+npx prisma migrate dev --name init
 
-yarn migrate:run
+npx prisma migrate deploy && npm run start:dev
