@@ -8,7 +8,7 @@
   "scripts": {
     "start:dev": "tsnd --respawn app.ts",
     "build": "tsc",
-    "migrate:init": "npx prisma migrate dev --name init",
+    "migrate:init": "npx prisma db push --preview-feature",
     "migrate:run": "npx prisma migrate deploy && yarn start:dev"
   },
   "devDependencies": {
